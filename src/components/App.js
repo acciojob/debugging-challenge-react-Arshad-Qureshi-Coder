@@ -1,14 +1,21 @@
-import React, {  useState } from "react";
+import React, { useEffect, useState } from "react";
 import '../styles/App.css';
 
 const App = () => {
 
-  const [count, setCount] = useState(0)
-
+  let [count, setCount] = useState(0)
+function handleDoubleClick()
+{
+  alert("cant edit it")
+}
+function handleClick()
+{
+  setCount(count+1)
+}
   return (
-    <div className="ball">
-      <h1 className="count" ondoubleclick={() => { alert("cant edit it") }}>{count}</h1>
-      <button className='increment-button' onclick={() => { setCount(count + 1) }}>Increment</button>
+    <div class="ball">
+      <h1 class="count" onDoubleClick={handleDoubleClick}>{count}</h1>
+      <button class='increment-button' onClick={handleClick}>Increment</button>
     </div>
   )
 }
